@@ -12,10 +12,7 @@ def index():
 @app.route('/get_ip_info')
 def get_ip_info():
     try:
-        # Fetch the client's IP address from the request object
         user_ip = request.remote_addr
-        
-        # Fetch IP information from ipwho.is
         response = requests.get(f'http://ipwho.is/{user_ip}?output=json')
         data = response.json()
         return jsonify({
