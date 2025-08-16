@@ -8,7 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body{
-            background-image:url ('/static/images/logo-2.png');
+            background-image: url("{{ url_for('static', filename='images/filename.png') }}");
             background-position:center;
             background-repeat: no-repeat;
             background-size: cover;
