@@ -26,6 +26,9 @@
         <button id="copyBtn" class="bg-green-500 text-white px-3 py-1 rounded-lg hover:bg-green-600 mt-2" style="display:none;">
             Copy IP
         </button>
+        <div id="popup" class="fixed top-8 left-1/2 transform -translate-x-1/2 bg-green-500 text-white px-4 py-2 rounded shadow-lg transition-opacity duration-500 opacity-0 pointer-events-none z-50">
+    IP copied successfully!
+         </div>
     </div>
 </div>
 <script>
@@ -59,8 +62,17 @@
         const ip = document.getElementById('ipValue')?.textContent;
         if (ip) {
             navigator.clipboard.writeText(ip);
+            showPopup();
         }
     });
+
+    function showPopup() {
+        const popup = document.getElementById('popup');
+        popup.style.opacity = '1';
+        setTimeout(() => {
+            popup.style.opacity = '0';
+        }, 1200);
+    }
 </script>
 </body>
 </html>
