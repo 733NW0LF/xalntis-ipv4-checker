@@ -25,7 +25,10 @@
             <div id="ipInfo" class="mt-4 text-lg text-gray-700"></div>
         </div>
     </div>
-
+<div id="ipInfo" class="mt-4 text-lg text-gray-700"></div>
+<button id="copyBtn" class="bg-green-500 text-white px-3 py-1 rounded-lg hover:bg-green-600 mt-2" style="display:none;">
+    Copy IP
+</button>
     <script>
         document.getElementById('fetchBtn').addEventListener('click', async () => {
             const ipInfoDiv = document.getElementById('ipInfo');
@@ -48,6 +51,13 @@
                 ipInfoDiv.innerHTML = '<p class="text-red-500">Error fetching IP information</p>';
             }
         });
+            document.getElementById('copyBtn').addEventListener('click', () => {
+        const ip = document.getElementById('ipValue')?.textContent;
+        if (ip) {
+            navigator.clipboard.writeText(ip);
+        }
+    });
+</script>
     </script>
 </body>
 </html>
