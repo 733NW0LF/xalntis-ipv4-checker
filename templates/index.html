@@ -73,8 +73,13 @@
     function showPopup() {
         const popup = document.getElementById('popup');
         popup.style.opacity = '1';
+        
         setTimeout(() => {
             popup.style.opacity = '0';
+
+            setTimeout(() => {
+                window.location.reload();
+            }, 500);
         }, 1200);
     }
 </script>
